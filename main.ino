@@ -1,13 +1,13 @@
 /* Create : Thiago Yamamoto
- * Last Update: 04/07/2022
+ * Last Update: 15/07/2022
  */
 
 /**********************************Defines Sensors**********************************/
 #define sensorProt A0             //Nº Pin
-#define correctionProt 0.014      //dimensionless
+#define correctionProt 0.011      //dimensionless
 
 #define sensorAmb A1              //Nº Pin
-#define correctionAmb 0.02         //dimensionless
+#define correctionAmb 0.0115        //dimensionless
 
 /**********************************Defines Alarm**********************************/
 #define buzzer 2                  //Nº Pin
@@ -52,6 +52,7 @@ void setup()
   
   Serial.print("DATA,TIME,");
   Serial.println(tempAmb);
+  Serial.print(",");
   Serial.println(tempProt);
 
   digitalWrite(lights8w, ON);
@@ -75,6 +76,7 @@ void loop()
   
   Serial.print("DATA,TIME,"); 
   Serial.print(tempAmb);
+  Serial.print(",");
   Serial.println(tempProt);
 
   delay(OneSecond*seconds);
